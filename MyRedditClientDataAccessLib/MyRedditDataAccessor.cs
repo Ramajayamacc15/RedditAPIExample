@@ -50,6 +50,8 @@ namespace MyRedditClientDataAccessLib
         {
             try
             {
+                if (post.Count() <= 0)
+                    return false;
                 _dbContext.Posts.AddRange(post);
                 _dbContext.SaveChanges();
                 return true;
@@ -79,6 +81,8 @@ namespace MyRedditClientDataAccessLib
         {
             try
             {
+                if (comment.Count() <= 0)
+                    return false;
                 _dbContext.Comments.AddRange(comment);
                 _dbContext.SaveChanges();
                 return true;

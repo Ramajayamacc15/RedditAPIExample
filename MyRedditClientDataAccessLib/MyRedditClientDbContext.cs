@@ -6,11 +6,17 @@ namespace MyRedditClientDataAccessLib
 {
     public class MyRedditClientDbContext : DbContext
     {
-        private const string connectionString = "Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;";
+        private const string connectionString = "Server=localhost\\SQLEXPRESS;Database=MyReddit;Trusted_Connection=True;";
 
         public MyRedditClientDbContext() : base()
         {
             Database.EnsureCreated();
+            var task = SubReddits.CountAsync();
+            if (task.Result <= 0)
+            {
+                SubReddits.Add(new SubReddit { Name = "science" });
+                SaveChanges();
+            }
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

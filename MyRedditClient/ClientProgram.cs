@@ -12,9 +12,9 @@ namespace MyRedditClient
         static MyRedditDataAccessor dataAccess;
         static void Main(string[] args)
         {
-            string appId = "12aZSUt1LmvPEjg";
-            string refreshToken = "6826826466213-Wg0Q2DQBwzHIeNFLJYCPZ8crsA1zXQ";
-            string accessToken = "6826826466213-mOGJ1P4Y8mYsa_-YW6uY9iI4bF8GpQ";
+            string appId = "xxxxxxxxxxxxxxxx";
+            string refreshToken = "xxxxxxxxxxxxxx-xxxxxxxxxxxx";
+            string accessToken = "682682646623-xxxxxxxxxx-xxxxxxxxxxxxxxx";
 
             RedditClient reddit = new RedditClient(appId: appId, refreshToken: refreshToken, accessToken: accessToken);
             dataAccess = new MyRedditDataAccessor();
